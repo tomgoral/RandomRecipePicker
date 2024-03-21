@@ -3,13 +3,20 @@ from PIL import ImageTk
 import sqlite3
 from numpy import random
 import pyglet
+import os
 
 # set colours
 bg_colour = "#3d6466"
+root = tk.Tk()
+
+# change working directory to the current file location
+os.chdir(os.path.dirname(__file__))
+
 
 # load custom fonts
-pyglet.font.add_file("fonts/Ubuntu-Bold.ttf")
-pyglet.font.add_file("fonts/Shanti-Regular.ttf")
+pyglet.font.add_file("./fonts/Ubuntu-Bold.ttf")
+#/Users/thomasgoral/myCode/RandomRecipePicker/complete_project_WINDOWS/fonts/Ubuntu-Bold.ttf
+pyglet.font.add_file("./fonts/Shanti-Regular.ttf")
 
 def clear_widgets(frame):
 	# select all frame widgets and delete them
@@ -137,7 +144,7 @@ def load_frame2():
 
 
 # initiallize app with basic settings
-root = tk.Tk()
+#root = tk.Tk()
 root.title("Recipe Picker")
 root.eval("tk::PlaceWindow . center")
 
